@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!-- definition name 为Controller 返回的页面名称 这里定义一个基础模板页 -->
+    <definition name="home" template="/WEB-INF/jsp/tiles/layout.jsp">
+        <put-attribute name="title" value="首页"/>
+        <put-attribute name="header" value="/WEB-INF/jsp/tiles/header.jsp"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/body.jsp"/>
+        <put-attribute name="footer" value="/WEB-INF/jsp/tiles/footer.jsp"/>
+        <!-- 跳转页面 -->
+        <!--<put-attribute name="dumpPage" value="profession"/>-->
+    </definition>
+
+    <!-- 继承直接引用父类模板 如有不同内容重写即可-->
+    <definition name="profession" extends="home">
+        <put-attribute name="title" value="职业"/>
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/profession.jsp"/>
+        <!-- 跳转页面 -->
+        <!--<put-attribute name="dumpPage" value="home"/>-->
+    </definition>
+
+    <definition name="company" extends="home">
+        <put-attribute name="title" value="企业"/>
+        <!--    //放入属性body值-->
+        <put-attribute name="body" value="/WEB-INF/jsp/tiles/company.jsp" />
+    </definition>
+
+</tiles-definitions>

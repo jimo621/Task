@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="hzw.mapper.StudentMapper">
+
+    <select id="findByIdStudent" resultType="Student" parameterType="Integer">
+        SELECT * FROM tb_students WHERE stuId = #{stuId}
+    </select>
+    <select id="findListStudent" resultType="Student">
+       /* SELECT stuName,stuIntroduction,stuWork,stuSuper,stuProfession FROM tb_students*/
+       SELECT * FROM tb_students
+    </select>
+    <insert id="insertStudent" parameterType="Student">
+    </insert>
+    <delete id="deleteStudent" parameterType="Integer">
+    </delete>
+
+    <update id="updateStudent" parameterType="Student">
+    </update>
+
+    <select id="countStudent" resultType="Integer">
+        SELECT COUNT(stuId) stuId FROM tb_students
+    </select>
+    <select id="countWork" resultType="Integer">
+        SELECT COUNT(stuWork) stuWork FROM tb_students WHERE stuWork != 0
+    </select>
+</mapper>
